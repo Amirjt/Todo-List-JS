@@ -1,5 +1,5 @@
 const $ = document;
-
+// Getting basic elements
 const input = $.querySelector("#taskInput");
 const addBtn = $.querySelector("#taskBtn");
 const list = $.querySelector(".list");
@@ -22,6 +22,8 @@ list.addEventListener("click" , (e)=>{
     }
  })
 
+
+// Task Generator Function
 function createTask(taskName){
   list.insertAdjacentHTML("beforeend" , `<li class="task">
   <label >${taskName}</label>
