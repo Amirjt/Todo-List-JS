@@ -1,0 +1,145 @@
+/* Montserrat font from google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+html {
+    background: linear-gradient(to right,#0cebeb,#20e3b2,#29ffc6);
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+.todo {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 25%;
+  padding: 30px;
+  display: flex;
+  border-radius: 20px 0px 20px 0px;
+}
+
+.title {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.title h2 {
+    margin-right: 10px;
+    color: #182C61;
+}
+
+input {
+    outline:none;
+    border: none;
+    background-color: #D2D5D3;
+    width: 100%;
+    padding: 15px 8px;
+    border-radius: 10px 0px 0px 0px;
+    font-family: 'Montserrat', sans-serif;
+    transition: all .3s;
+}
+
+input[type="text"]:focus {
+    opacity: 60%;
+}
+
+.addingtask {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    border: none;
+    background-color: #02937D;
+    padding: 15px 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: white;
+    border-radius: 0px 0px 10px 0px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.btn:hover {
+    opacity: 60%;
+}
+
+.list {
+    padding: 0;
+    margin-top: 30px;
+    list-style-type: none;
+}
+
+label {
+    font-size: 18px;
+    color: #3B3B98;
+}
+
+.task {
+    width: 450px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#EEEFF1;
+    padding: 20px 15px;
+    border-radius: 20px 0px 20px 0px;
+}
+
+
+.tasks .list li {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+input[type="checkbox"] {
+    width: fit-content;
+    cursor: pointer;
+}
+
+.close {
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.close:hover {
+   transform: translateY(-5px);
+}
+
+
+.completed {
+    text-decoration: line-through;
+    opacity: 80%;
+}
+
+label {
+    margin-left: 40px;
+}
+
+ul li::before {
+ content: "";
+ position: absolute;
+ margin-right: 30px;
+ height: 24px;
+ width: 24px;
+ border-radius: 50%;
+ background-image: url(/images/unchecked.png);
+ background-size: cover;
+ background-position: center;
+}
+
+ul li.completed::before {
+    background-image: url(/images/checked.png);
+}
