@@ -8,18 +8,23 @@ addBtn.addEventListener("click" , ()=>{
     if(input.value != ""){
         createTask(input.value)
     }
+    saveData()
 })
 
 input.addEventListener("keypress" , (e)=>{
    if(e.keyCode == 13){
     createTask(input.value)
    }
+   saveData()
 })
 
 list.addEventListener("click" , (e)=>{
     if(e.target.tagName === "LI"){
         e.target.classList.toggle("completed") 
+    }else if (e.target.tagName === "IMG"){
+        e.target.parentElement.remove() 
     }
+    saveData()
  })
 
 
@@ -29,13 +34,17 @@ function createTask(taskName){
   <label >${taskName}</label>
   <img class="close" src="/images/close.png" width="20" height="20" alt="">
 </li>`)
-  const closeBtn = $.querySelectorAll(".close")
-  closeBtn.forEach((btn)=>{
-    btn.addEventListener("click" , (e)=>{
-        e.target.parentElement.remove()
-      })
-  })
+  saveData()
   input.value = ""
 }
 
 
+function saveData(){
+    localStorage.setItem("data" , list.innerHTML)
+}
+
+function getData(){
+   list.innerHTML = localStorage.getItem("data")
+}
+
+window.addEventListener("load" , getData)

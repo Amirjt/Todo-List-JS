@@ -84,7 +84,7 @@ input[type="text"]:focus {
 }
 
 label {
-    font-size: 18px;
+    font-size: 16px;
     color: #3B3B98;
 }
 
@@ -121,7 +121,7 @@ input[type="checkbox"] {
 
 .completed {
     text-decoration: line-through;
-    opacity: 80%;
+    opacity: 60%;
 }
 
 label {
